@@ -38,10 +38,18 @@ function displayBook() {
 
 function getNewBookInfo() {
     const newBookBtn = document.querySelector('.new-book-button');
+    const modal = document.querySelector('dialog');
 
     newBookBtn.addEventListener('click', () => {
-        const form = document.querySelector('.new-book-form');
-        form.classList.remove('no-show');
+        modal.showModal();
+        // const form = document.querySelector('.new-book-form');
+        // form.classList.remove('no-show');
+        
+        const submitBtn = document.querySelector('.new-book-form button');
+        submitBtn.addEventListener('click', (event)=> {
+            event.preventDefault(); // We don't want to submit the form
+            modal.close();
+        });
     });
 }
 
