@@ -25,10 +25,56 @@
     font-weight: 600;
     padding: 0.5rem 1rem;
     margin: 1rem auto;
-    border-radius: 5px;
+    border-radius: 20px;
     background-color: rgb(178, 213, 237);
 }
 
 .new-book:hover {
+    cursor: pointer;
+}
+
+.new-book-form {
+    width: 500px;
+    height: 300px;
+    padding: 20px;
+    margin: 1rem auto;
+    background-color: rgb(218, 212, 206);
+    border: 1px solid rgb(220, 219, 214);
+    border-radius: 20px;
+}
+
+.new-book-form p {
+    margin-bottom: 20px;
+}
+
+.new-book-form label {
+    display: inline-block;
+    margin-right: 20px;
+    width: 120px;
+    text-align: right;
+}
+
+.new-book-form input {
+    width: 300px;
+    background-color: #FFFFFF;
+    border: 1px solid #D6D9DC;
+    font-size: 14px;
+    border-radius: 3px;
+    padding: 7px;
+}
+
+.new-book-form button {
+    margin-top: 10px;
+    margin-left: 140px;
+    width: 120px;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    background-color: rgb(139, 172, 201);
+    font-weight: bold;
+    letter-spacing: 0.2ch;
+}
+
+.new-book-form button:hover {
     cursor: pointer;
 }
