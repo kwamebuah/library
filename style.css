@@ -17,7 +17,7 @@
     padding: 1rem 0.5rem;
 }
 
-.new-book {
+.new-book-button {
     display: block;
     width: 10%;
     font-size: 1rem;
@@ -29,11 +29,12 @@
     background-color: rgb(178, 213, 237);
 }
 
-.new-book:hover {
+.new-book-button:hover {
     cursor: pointer;
 }
 
 .new-book-form {
+
     width: 500px;
     height: 300px;
     padding: 20px;
@@ -77,4 +78,8 @@
 
 .new-book-form button:hover {
     cursor: pointer;
+}
+
+.no-show{
+    display: none;
 }

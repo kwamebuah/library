@@ -1,13 +1,13 @@
 const myLibrary = [];
 
-function Book(title, author, numOfPages = 1, isRead='No') {
-    if (isRead === 'yes') {isRead = 'Yes';}
-    if (isRead === 'no') {isRead = 'No';}
-    
+function Book(title, author, numOfPages = 1, isRead = 'No') {
+    if (isRead === 'yes') { isRead = 'Yes'; }
+    if (isRead === 'no') { isRead = 'No'; }
+
     this['Title'] = title;
     this['Author'] = author;
     this['Number of Pages'] = numOfPages;
-    this['Have You Read It'] = isRead;   
+    this['Have You Read It'] = isRead;
 }
 
 function addBookToLibrary(title, author, numOfPages, isRead) {
@@ -22,7 +22,6 @@ addBookToLibrary('The Fellowship of the Rings', 'J.R.R Tolkien', 457, 'yes');
 addBookToLibrary('All Systems Red', 'Martha Wells', 400, 'yes');
 addBookToLibrary('Harry Potter and the Chamber of Secrets', 'J.K. Rowling', 450);
 
-// console.log(myLibrary);
 function displayBook() {
     for (const book of myLibrary) {
         const card = document.createElement('section');
@@ -37,4 +36,14 @@ function displayBook() {
     }
 }
 
+function getNewBookInfo() {
+    const newBookBtn = document.querySelector('.new-book-button');
+
+    newBookBtn.addEventListener('click', () => {
+        const form = document.querySelector('.new-book-form');
+        form.classList.remove('no-show');
+    });
+}
+
+getNewBookInfo();
 displayBook();
