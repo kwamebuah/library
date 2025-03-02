@@ -16,3 +16,19 @@
 .book-card p {
     padding: 1rem 0.5rem;
 }
+
+.new-book {
+    display: block;
+    width: 10%;
+    font-size: 1rem;
+    letter-spacing: 0.5ch;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    margin: 1rem auto;
+    border-radius: 5px;
+    background-color: rgb(178, 213, 237);
+}
+
+.new-book:hover {
+    cursor: pointer;
+}
