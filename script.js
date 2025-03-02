@@ -1,10 +1,13 @@
 const myLibrary = [];
 
 function Book(title, author, numOfPages = 1, isRead='No') {
+    if (isRead === 'yes') {isRead = 'Yes';}
+    if (isRead === 'no') {isRead = 'No';}
+    
     this['Title'] = title;
     this['Author'] = author;
     this['Number of Pages'] = numOfPages;
-    this['Have You Read It'] = isRead;
+    this['Have You Read It'] = isRead;   
 }
 
 function addBookToLibrary(title, author, numOfPages, isRead) {
