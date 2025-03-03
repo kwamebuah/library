@@ -14,7 +14,18 @@
 }
 
 .book-card p {
-    padding: 1rem 0.5rem;
+    padding: 0.7rem 1rem;
+}
+
+.book-card>p:first-child {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.book-card>p:nth-child(2) {
+    font-style: italic;
 }
 
 .new-book-button {

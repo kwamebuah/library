@@ -7,8 +7,8 @@ function Book(title, author, numOfPages = 1, isRead = 'No') {
     if (isRead === 'yes') { isRead = 'Yes'; }
     if (isRead === 'no') { isRead = 'No'; }
 
-    this['Title'] = title;
-    this['Author'] = author;
+    this.title = title;
+    this.author = author;
     this['Number of Pages'] = numOfPages;
     this['Have You Read It'] = isRead;
 }
@@ -29,7 +29,16 @@ function displayBook() {
     card.classList.add('book-card');
     for (const key in toDisplay) {
         const para = document.createElement('p');
-        para.textContent = `${key}: ${toDisplay[key]}`;
+        
+        if (key === 'title') {
+            para.textContent = `${toDisplay[key]}`;
+        }
+        else if (key === 'author') {
+            para.textContent = `by ${toDisplay[key]}`;
+        }
+        else {
+            para.textContent = `${key}: ${toDisplay[key]}`;
+        }
         card.appendChild(para);
     }
     const body = document.querySelector('body');
