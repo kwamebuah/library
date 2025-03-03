@@ -1,4 +1,7 @@
 const myLibrary = [];
+const newBookBtn = document.querySelector('.new-book-button');
+const modal = document.querySelector('dialog');
+const submitBtn = document.querySelector('.new-book-form button');
 
 function Book(title, author, numOfPages = 1, isRead = 'No') {
     if (isRead === 'yes') { isRead = 'Yes'; }
@@ -11,10 +14,8 @@ function Book(title, author, numOfPages = 1, isRead = 'No') {
 }
 
 function addBookToLibrary(title, author, numOfPages, isRead) {
-    for (let i = myLibrary.length; i >= myLibrary.length; i--) {
-        const newBook = new Book(title, author, numOfPages, isRead);
-        myLibrary.push(newBook);
-    }
+    const newBook = new Book(title, author, numOfPages, isRead);
+    myLibrary.push(newBook);
 }
 
 // addBookToLibrary('The Hobbit', 'J.R.R Tolkien', 295, 'yes');
@@ -36,29 +37,23 @@ function displayBook() {
     }
 }
 
-function getNewBookInfo() {
-    const newBookBtn = document.querySelector('.new-book-button');
-    const modal = document.querySelector('dialog');
+newBookBtn.addEventListener('click', () => {
+    modal.showModal();
+});
+
+submitBtn.addEventListener('click', (event) => {
+    event.preventDefault(); // We don't want to submit the form
+
     const title = document.querySelector('#title');
     const author = document.querySelector('#author');
     const numOfPages = document.querySelector('#pages');
     const hasRead = document.querySelector('#read');
 
-    newBookBtn.addEventListener('click', () => {
-        modal.showModal();
-        // const form = document.querySelector('.new-book-form');
-        // form.classList.remove('no-show');
-        
-        const submitBtn = document.querySelector('.new-book-form button');
-        submitBtn.addEventListener('click', (event)=> {
-            event.preventDefault(); // We don't want to submit the form
-
-            addBookToLibrary(title.value, author.value, numOfPages.value, hasRead.value);
-            displayBook();
-            modal.close();
-        });
-    });
-}
-
-getNewBookInfo();
-displayBook();
+    addBookToLibrary(title.value, author.value, numOfPages.value, hasRead.value);
+    title.value = "";
+    author.value = "";
+    numOfPages.value = "";
+    hasRead.value = "";
+    // displayBook();
+    modal.close();
+});
