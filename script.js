@@ -24,17 +24,16 @@ function addBookToLibrary(title, author, numOfPages, isRead) {
 // addBookToLibrary('Harry Potter and the Chamber of Secrets', 'J.K. Rowling', 450);
 
 function displayBook() {
-    for (const book of myLibrary) {
-        const card = document.createElement('section');
-        card.classList.add('book-card');
-        for (const key in book) {
-            const para = document.createElement('p');
-            para.textContent = `${key}: ${book[key]}`;
-            card.appendChild(para);
-        }
-        const body = document.querySelector('body');
-        body.appendChild(card);
+    let toDisplay = myLibrary.at(-1);
+    const card = document.createElement('section');
+    card.classList.add('book-card');
+    for (const key in toDisplay) {
+        const para = document.createElement('p');
+        para.textContent = `${key}: ${toDisplay[key]}`;
+        card.appendChild(para);
     }
+    const body = document.querySelector('body');
+    body.appendChild(card);
 }
 
 newBookBtn.addEventListener('click', () => {
@@ -54,6 +53,6 @@ submitBtn.addEventListener('click', (event) => {
     author.value = "";
     numOfPages.value = "";
     hasRead.value = "";
-    // displayBook();
+    displayBook();
     modal.close();
 });
