@@ -17,10 +17,10 @@ function addBookToLibrary(title, author, numOfPages, isRead) {
     }
 }
 
-addBookToLibrary('The Hobbit', 'J.R.R Tolkien', 295, 'yes');
-addBookToLibrary('The Fellowship of the Rings', 'J.R.R Tolkien', 457, 'yes');
-addBookToLibrary('All Systems Red', 'Martha Wells', 400, 'yes');
-addBookToLibrary('Harry Potter and the Chamber of Secrets', 'J.K. Rowling', 450);
+// addBookToLibrary('The Hobbit', 'J.R.R Tolkien', 295, 'yes');
+// addBookToLibrary('The Fellowship of the Rings', 'J.R.R Tolkien', 457, 'yes');
+// addBookToLibrary('All Systems Red', 'Martha Wells', 400, 'yes');
+// addBookToLibrary('Harry Potter and the Chamber of Secrets', 'J.K. Rowling', 450);
 
 function displayBook() {
     for (const book of myLibrary) {
@@ -39,6 +39,10 @@ function displayBook() {
 function getNewBookInfo() {
     const newBookBtn = document.querySelector('.new-book-button');
     const modal = document.querySelector('dialog');
+    const title = document.querySelector('#title');
+    const author = document.querySelector('#author');
+    const numOfPages = document.querySelector('#pages');
+    const hasRead = document.querySelector('#read');
 
     newBookBtn.addEventListener('click', () => {
         modal.showModal();
@@ -48,6 +52,9 @@ function getNewBookInfo() {
         const submitBtn = document.querySelector('.new-book-form button');
         submitBtn.addEventListener('click', (event)=> {
             event.preventDefault(); // We don't want to submit the form
+
+            addBookToLibrary(title.value, author.value, numOfPages.value, hasRead.value);
+            displayBook();
             modal.close();
         });
     });
