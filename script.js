@@ -9,7 +9,7 @@ function Book(title, author, numOfPages = 1, isRead = 'No') {
 
     this.title = title;
     this.author = author;
-    this['Number of Pages'] = numOfPages;
+    this['Pages'] = numOfPages;
     this['Have You Read It'] = isRead;
 }
 
