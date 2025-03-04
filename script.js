@@ -8,6 +8,7 @@ function Book(title, author, numOfPages, isRead) {
     this.author = author;
     this['Pages'] = numOfPages;
     this['Read'] = isRead;
+    this.id = myLibrary.length;
 }
 
 function addBookToLibrary(title, author, numOfPages, isRead) {
@@ -22,19 +23,24 @@ function addBookToLibrary(title, author, numOfPages, isRead) {
 
 function displayBook() {
     let toDisplay = myLibrary.at(-1);
+    const idxNum = toDisplay.id;
     const card = document.createElement('section');
+    
     card.classList.add('book-card');
+    card.setAttribute('data-id', idxNum);
     for (const key in toDisplay) {
         const para = document.createElement('p');
-
-        if (key === 'title') {
-            para.textContent = `${toDisplay[key]}`;
-        }
-        else if (key === 'author') {
-            para.textContent = `by ${toDisplay[key]}`;
-        }
-        else {
-            para.textContent = `${key}: ${toDisplay[key]}`;
+        switch (key) {
+            case 'id':
+                break;
+            case 'title':
+                para.textContent = `${toDisplay[key]}`;
+                break;
+            case 'author':
+                para.textContent = `by ${toDisplay[key]}`;
+                break;
+            default:
+                para.textContent = `${key}: ${toDisplay[key]}`;
         }
         card.appendChild(para);
     }
