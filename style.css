@@ -45,9 +45,8 @@
 }
 
 .new-book-form {
-
     width: 500px;
-    height: 350px;
+    height: 320px;
     padding: 20px;
     margin: 1rem auto;
     background-color: rgb(218, 212, 206);
@@ -88,10 +87,15 @@
     vertical-align: middle;
 }
 
-.new-book-form button {
-    margin-top: 20px;
-    margin-left: 140px;
+.form-buttons {
     width: 300px;
+    margin-left: 140px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.new-book-form button {
+    width: 130px;
     padding: 10px;
     border-radius: 15px;
     border: none;
