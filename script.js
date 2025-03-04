@@ -3,14 +3,11 @@ const newBookBtn = document.querySelector('.new-book-button');
 const modal = document.querySelector('dialog');
 const submitBtn = document.querySelector('.new-book-form button');
 
-function Book(title, author, numOfPages = 1, isRead = 'No') {
-    if (isRead === 'yes') { isRead = 'Yes'; }
-    if (isRead === 'no') { isRead = 'No'; }
-
+function Book(title, author, numOfPages, isRead) {
     this.title = title;
     this.author = author;
     this['Pages'] = numOfPages;
-    this['Have You Read It'] = isRead;
+    this['Read'] = isRead;
 }
 
 function addBookToLibrary(title, author, numOfPages, isRead) {
@@ -29,7 +26,7 @@ function displayBook() {
     card.classList.add('book-card');
     for (const key in toDisplay) {
         const para = document.createElement('p');
-        
+
         if (key === 'title') {
             para.textContent = `${toDisplay[key]}`;
         }
@@ -55,13 +52,16 @@ submitBtn.addEventListener('click', (event) => {
     const title = document.querySelector('#title');
     const author = document.querySelector('#author');
     const numOfPages = document.querySelector('#pages');
-    const hasRead = document.querySelector('#read');
+    const hasRead = document.querySelector('#isRead');
+
+    if (hasRead.checked) { hasRead.value = 'Yes'; }
+    else { hasRead.value = 'No'; }
 
     addBookToLibrary(title.value, author.value, numOfPages.value, hasRead.value);
     title.value = "";
     author.value = "";
     numOfPages.value = "";
-    hasRead.value = "";
+    hasRead.checked = false;
     displayBook();
     modal.close();
 });

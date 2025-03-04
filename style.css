@@ -73,7 +73,7 @@
     text-align: right;
 }
 
-.new-book-form input {
+.new-book-form input[type='text'] {
     width: 300px;
     background-color: #FFFFFF;
     border: 1px solid #D6D9DC;
@@ -82,10 +82,16 @@
     padding: 7px;
 }
 
+.new-book-form input[type='checkbox'] {
+    width: 1.2rem;
+    height: 1.2rem;
+    vertical-align: middle;
+}
+
 .new-book-form button {
-    margin-top: 10px;
+    margin-top: 20px;
     margin-left: 140px;
-    width: 120px;
+    width: 300px;
     padding: 10px;
     border-radius: 15px;
     border: none;
