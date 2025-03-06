@@ -6,11 +6,12 @@
 
 .book-card {
     width: 350px;
-    height: 200px;
+    height: 240px;
     background-color: antiquewhite;
     border: none;
     border-radius: 10px;
     margin: 10px;
+    position: relative;
 }
 
 .book-card p {
@@ -26,6 +27,14 @@
 
 .book-card>p:nth-child(2) {
     font-style: italic;
+}
+
+.book-card .del-book {
+    font-size: 0.7rem;
+    padding: 0.5rem;
+    margin-bottom: 0.7rem;
+    position: absolute;
+    right: 1rem;
 }
 
 .new-book-button {

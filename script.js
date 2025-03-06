@@ -25,7 +25,7 @@ function displayBook() {
     let toDisplay = myLibrary.at(-1);
     const idxNum = toDisplay.id;
     const card = document.createElement('section');
-    
+
     card.classList.add('book-card');
     card.setAttribute('data-id', idxNum);
     for (const key in toDisplay) {
@@ -44,6 +44,16 @@ function displayBook() {
         }
         card.appendChild(para);
     }
+    const deleteBook = document.createElement('button');
+    deleteBook.classList.add('del-book');
+    deleteBook.textContent = 'Remove';
+    card.appendChild(deleteBook);
+
+    deleteBook.addEventListener('click', () => {
+        myLibrary.splice(myLibrary.findIndex(obj => obj.id === idxNum), 1);
+        card.remove();
+    });
+
     const body = document.querySelector('body');
     body.appendChild(card);
 }
