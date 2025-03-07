@@ -17,9 +17,10 @@ function addBookToLibrary(title, author, numOfPages, isRead) {
 }
 
 // addBookToLibrary('The Hobbit', 'J.R.R Tolkien', 295, 'yes');
-// addBookToLibrary('The Fellowship of the Rings', 'J.R.R Tolkien', 457, 'yes');
-// addBookToLibrary('All Systems Red', 'Martha Wells', 400, 'yes');
-// addBookToLibrary('Harry Potter and the Chamber of Secrets', 'J.K. Rowling', 450);
+// addBookToLibrary('The Fellowship of the Rings', 'J.R.R Tolkien', 432, 'yes');
+// addBookToLibrary('All Systems Red', 'Martha Wells', 160, 'yes');
+// addBookToLibrary('Harry Potter and the Chamber of Secrets', 'J.K. Rowling', 352, yes);
+// addBookToLibrary('A Stitch in Time', 'Andrew J. Robinson', '396', yes);
 
 function displayBook() {
     let toDisplay = myLibrary.at(-1);
@@ -29,14 +30,15 @@ function displayBook() {
     const readInput = document.createElement('input');
     const div1 = document.createElement('div');
     const div2 = document.createElement('div');
-    
+    const deleteBook = document.createElement('button');
+
     readInput.setAttribute('type', 'checkbox');
 
     card.classList.add('book-card');
     card.setAttribute('data-id', idxNum);
 
     for (const key in toDisplay) {
-        if (key === 'id') {}
+        if (key === 'id') { }
         else if (key === 'title') {
             const para = document.createElement('p');
             para.textContent = `${toDisplay[key]}`;
@@ -59,6 +61,9 @@ function displayBook() {
                 readInput.checked = !readInput.checked;  // Checkbox is empty by default. Toggle it on
             }
             div2.appendChild(readInput);
+            deleteBook.classList.add('del-book');
+            deleteBook.textContent = 'x';
+            div2.appendChild(deleteBook);
             card.appendChild(para);
         }
         else {
@@ -66,19 +71,14 @@ function displayBook() {
             para.textContent = `${key}: ${toDisplay[key]}`;
             card.appendChild(para);
         }
-        // card.appendChild(para);
     }
-    const deleteBook = document.createElement('button');
-    deleteBook.classList.add('del-book');
-    deleteBook.textContent = 'Remove';
-    card.appendChild(deleteBook);
 
     deleteBook.addEventListener('click', () => {
         myLibrary.splice(myLibrary.findIndex(obj => obj.id === idxNum), 1);
         card.remove();
     });
 
-    readInput.addEventListener('change', function() {
+    readInput.addEventListener('change', function () {
         if (this.checked) {
             myLibrary[myLibrary.findIndex(obj => obj.id === idxNum)]['Read'] = 'Yes';
             readResponse.textContent = 'Yes';

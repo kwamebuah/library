@@ -5,13 +5,12 @@
 }
 
 .book-card {
-    width: 350px;
-    height: 240px;
+    width: 320px;
+    height: 210px;
     background-color: antiquewhite;
     border: none;
     border-radius: 10px;
     margin: 10px;
-    position: relative;
 }
 
 .book-card p {
@@ -29,12 +28,34 @@
     font-style: italic;
 }
 
+.book-card>p:nth-child(4) {
+    display: flex;
+    justify-content: space-between;
+}
+
+.book-card p div:last-child {
+    display: flex;
+}
+
+.book-card p div input[type='checkbox'] {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: 2rem;
+}
+
 .book-card .del-book {
-    font-size: 0.7rem;
-    padding: 0.5rem;
+    font-size: 1rem;
     margin-bottom: 0.7rem;
-    position: absolute;
-    right: 1rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    border: none;
+    background-color: rgb(198, 74, 74);
+    color: #FFFFFF;
+}
+
+.book-card .del-book {
+    cursor: pointer;
 }
 
 .new-book-button {
@@ -116,10 +137,6 @@
 .new-book-form button:hover {
     cursor: pointer;
 }
-
-/* .no-show {
-    display: none;
-} */
 
 dialog {
     border: none;
