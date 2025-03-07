@@ -25,23 +25,35 @@ function displayBook() {
     let toDisplay = myLibrary.at(-1);
     const idxNum = toDisplay.id;
     const card = document.createElement('section');
+    const readResponse = document.createElement('span');
+    const readInput = document.createElement('input');
+    const div1 = document.createElement('div');
+    const div2 = document.createElement('div');
+    
+    readInput.setAttribute('type', 'checkbox');
 
     card.classList.add('book-card');
     card.setAttribute('data-id', idxNum);
+
     for (const key in toDisplay) {
         const para = document.createElement('p');
-        switch (key) {
-            case 'id':
-                break;
-            case 'title':
-                para.textContent = `${toDisplay[key]}`;
-                break;
-            case 'author':
-                para.textContent = `by ${toDisplay[key]}`;
-                break;
-            default:
-                para.textContent = `${key}: ${toDisplay[key]}`;
+
+        if (key === 'id') {}
+        else if (key === 'title') {para.textContent = `${toDisplay[key]}`;}
+        else if (key === 'author') {para.textContent = `by ${toDisplay[key]}`;}
+        else if (key === 'Read') {
+            para.appendChild(div1);
+            div1.textContent = `${key}: `;
+            div1.appendChild(readResponse);
+            readResponse.textContent = `${toDisplay[key]}`;
+            para.appendChild(div2);
+            // Make sure checkbox shows checked if user entered read in form details
+            if (toDisplay[key] === 'Yes') {
+                readInput.checked = !readInput.checked;  // Checkbox is empty by default. Toggle it on
+            }
+            div2.appendChild(readInput);
         }
+        else {para.textContent = `${key}: ${toDisplay[key]}`;}
         card.appendChild(para);
     }
     const deleteBook = document.createElement('button');
@@ -52,6 +64,17 @@ function displayBook() {
     deleteBook.addEventListener('click', () => {
         myLibrary.splice(myLibrary.findIndex(obj => obj.id === idxNum), 1);
         card.remove();
+    });
+
+    readInput.addEventListener('change', function() {
+        if (this.checked) {
+            myLibrary[myLibrary.findIndex(obj => obj.id === idxNum)]['Read'] = 'Yes';
+            readResponse.textContent = 'Yes';
+        }
+        else {
+            myLibrary[myLibrary.findIndex(obj => obj.id === idxNum)]['Read'] = 'No';
+            readResponse.textContent = 'No';
+        }
     });
 
     const body = document.querySelector('body');
