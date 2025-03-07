@@ -16,12 +16,6 @@ function addBookToLibrary(title, author, numOfPages, isRead) {
     myLibrary.push(newBook);
 }
 
-// addBookToLibrary('The Hobbit', 'J.R.R Tolkien', 295, 'yes');
-// addBookToLibrary('The Fellowship of the Rings', 'J.R.R Tolkien', 432, 'yes');
-// addBookToLibrary('All Systems Red', 'Martha Wells', 160, 'yes');
-// addBookToLibrary('Harry Potter and the Chamber of Secrets', 'J.K. Rowling', 352, yes);
-// addBookToLibrary('A Stitch in Time', 'Andrew J. Robinson', '396', yes);
-
 function displayBook() {
     let toDisplay = myLibrary.at(-1);
     const idxNum = toDisplay.id;
@@ -89,8 +83,8 @@ function displayBook() {
         }
     });
 
-    const body = document.querySelector('body');
-    body.appendChild(card);
+    const wrapper = document.querySelector('.wrapper');
+    wrapper.appendChild(card);
 }
 
 newBookBtn.addEventListener('click', () => {
@@ -116,3 +110,14 @@ submitBtn.addEventListener('click', (event) => {
     displayBook();
     modal.close();
 });
+
+const book1 = addBookToLibrary('The Hobbit', 'J.R.R Tolkien', 295, 'Yes');
+displayBook();
+const book2 = addBookToLibrary('The Fellowship of the Rings', 'J.R.R Tolkien', 432, 'Yes');
+displayBook();
+const book3 = addBookToLibrary('All Systems Red', 'Martha Wells', 160, 'Yes');
+displayBook();
+const book4 = addBookToLibrary('Harry Potter and the Chamber of Secrets', 'J.K. Rowling', 352, 'Yes');
+displayBook();
+const book5 = addBookToLibrary('A Stitch in Time', 'Andrew J. Robinson', '396', 'Yes');
+displayBook();

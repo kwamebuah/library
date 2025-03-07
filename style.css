@@ -4,13 +4,27 @@
     box-sizing: border-box;
 }
 
+body {
+    background-image: url('jessica-ruscello-OQSCtabGkSY-unsplash.jpg');
+    background-size: contain;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    justify-items: center;
+    row-gap: 80px;
+    margin: 50px 0;   
+}
+
 .book-card {
     width: 320px;
     height: 210px;
     background-color: antiquewhite;
     border: none;
     border-radius: 10px;
-    margin: 10px;
+    box-shadow: 3px 3px 3px rgb(0, 0, 0);
 }
 
 .book-card p {
@@ -21,11 +35,11 @@
     text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
-    text-decoration: underline;
 }
 
 .book-card>p:nth-child(2) {
     font-style: italic;
+    text-align: center;
 }
 
 .book-card>p:nth-child(4) {
@@ -60,7 +74,7 @@
 
 .new-book-button {
     display: block;
-    width: 10%;
+    width: 15rem;
     font-size: 1rem;
     letter-spacing: 0.5ch;
     font-weight: 600;
@@ -68,6 +82,8 @@
     margin: 1rem auto;
     border-radius: 20px;
     background-color: rgb(178, 213, 237);
+    color: #FFFFFF;
+    text-shadow: 1px 1px rgb(0, 0, 0);
 }
 
 .new-book-button:hover {
