@@ -1,3 +1,4 @@
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +15,7 @@
     --std-left-right-padding: 1rem;
 }
 
-
+/* GENERAL FONT AND LAYOUT */
 body {
     min-height: 100vh;
     background-image: url('jessica-ruscello-OQSCtabGkSY-unsplash.jpg');
@@ -34,64 +35,7 @@ body {
     margin: 50px 0;   
 }
 
-.book-card {
-    width: 320px;
-    height: 210px;
-    background-color: antiquewhite;
-    border: none;
-    border-radius: 10px;
-    box-shadow: var(--box-shadow);
-}
-
-.book-card h3 {
-    padding: 0.7rem var(--std-left-right-padding);
-}
-
-.book-card p {
-    padding: 0.7rem var(--std-left-right-padding);
-}
-
-.book-card>h3 {
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.book-card>p:nth-child(2) {
-    font-style: italic;
-    text-align: center;
-}
-
-.book-card>p:nth-child(4) {
-    display: flex;
-    justify-content: space-between;
-}
-
-.book-card p div:last-child {
-    display: flex;
-}
-
-.book-card p div input[type='checkbox'] {
-    width: 1.2rem;
-    height: 1.2rem;
-    margin-right: 2rem;
-}
-
-.book-card .del-book {
-    font-size: 1rem;
-    margin-bottom: 0.7rem;
-    width: 1.2rem;
-    height: 1.2rem;
-    border-radius: 50%;
-    border: none;
-    background-color: var(--custom-red-clr);
-    color: var(--white-clr);
-}
-
-.book-card .del-book {
-    cursor: pointer;
-}
-
+/* ADD BOOK AND FORM STYLES */
 .new-book-button {
     display: block;
     width: 15rem;
@@ -186,6 +130,66 @@ dialog {
     background-color: var(--transparent-black-clr);
 }
 
+/* BOOK CARD STYLE */
+.book-card {
+    width: 320px;
+    height: 210px;
+    background-color: antiquewhite;
+    border: none;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.book-card h3 {
+    padding: 0.7rem var(--std-left-right-padding);
+}
+
+.book-card p {
+    padding: 0.7rem var(--std-left-right-padding);
+}
+
+.book-card>h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.book-card>p:nth-child(2) {
+    font-style: italic;
+    text-align: center;
+}
+
+.book-card>p:nth-child(4) {
+    display: flex;
+    justify-content: space-between;
+}
+
+.book-card p div:last-child {
+    display: flex;
+}
+
+.book-card p div input[type='checkbox'] {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: 2rem;
+}
+
+.book-card .del-book {
+    font-size: 1rem;
+    margin-bottom: 0.7rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--custom-red-clr);
+    color: var(--white-clr);
+}
+
+.book-card .del-book {
+    cursor: pointer;
+}
+
+/*  FOOTER STYLE */
 footer {
     background-color: var(--transparent-black-clr);
     padding: var(--std-left-right-padding);
