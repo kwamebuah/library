@@ -36,12 +36,19 @@ function displayBook() {
     card.setAttribute('data-id', idxNum);
 
     for (const key in toDisplay) {
-        const para = document.createElement('p');
-
         if (key === 'id') {}
-        else if (key === 'title') {para.textContent = `${toDisplay[key]}`;}
-        else if (key === 'author') {para.textContent = `by ${toDisplay[key]}`;}
+        else if (key === 'title') {
+            const para = document.createElement('p');
+            para.textContent = `${toDisplay[key]}`;
+            card.appendChild(para);
+        }
+        else if (key === 'author') {
+            const para = document.createElement('p');
+            para.textContent = `by ${toDisplay[key]}`;
+            card.appendChild(para);
+        }
         else if (key === 'Read') {
+            const para = document.createElement('p');
             para.appendChild(div1);
             div1.textContent = `${key}: `;
             div1.appendChild(readResponse);
@@ -52,9 +59,14 @@ function displayBook() {
                 readInput.checked = !readInput.checked;  // Checkbox is empty by default. Toggle it on
             }
             div2.appendChild(readInput);
+            card.appendChild(para);
         }
-        else {para.textContent = `${key}: ${toDisplay[key]}`;}
-        card.appendChild(para);
+        else {
+            const para = document.createElement('p');
+            para.textContent = `${key}: ${toDisplay[key]}`;
+            card.appendChild(para);
+        }
+        // card.appendChild(para);
     }
     const deleteBook = document.createElement('button');
     deleteBook.classList.add('del-book');
