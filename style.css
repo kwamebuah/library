@@ -4,6 +4,17 @@
     box-sizing: border-box;
 }
 
+/* VARIABLES */
+:root {
+    --box-shadow: 3px 3px 3px rgb(0, 0, 0);
+    --text-shadow: 1px 1px rgb(0, 0, 0);
+    --white-clr: #fff;
+    --transparent-black-clr: rgba(0, 0, 0, 0.40);
+    --custom-red-clr: rgb(198, 74, 74);
+    --std-left-right-padding: 1rem;
+}
+
+
 body {
     min-height: 100vh;
     background-image: url('jessica-ruscello-OQSCtabGkSY-unsplash.jpg');
@@ -29,15 +40,15 @@ body {
     background-color: antiquewhite;
     border: none;
     border-radius: 10px;
-    box-shadow: 3px 3px 3px rgb(0, 0, 0);
+    box-shadow: var(--box-shadow);
 }
 
 .book-card h3 {
-    padding: 0.7rem 1rem;
+    padding: 0.7rem var(--std-left-right-padding);
 }
 
 .book-card p {
-    padding: 0.7rem 1rem;
+    padding: 0.7rem var(--std-left-right-padding);
 }
 
 .book-card>h3 {
@@ -73,8 +84,8 @@ body {
     height: 1.2rem;
     border-radius: 50%;
     border: none;
-    background-color: rgb(198, 74, 74);
-    color: #FFFFFF;
+    background-color: var(--custom-red-clr);
+    color: var(--white-clr);
 }
 
 .book-card .del-book {
@@ -87,13 +98,13 @@ body {
     font-size: 1rem;
     letter-spacing: 0.5ch;
     font-weight: 600;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem var(--std-left-right-padding);
     margin: 1rem auto;
     border-radius: 20px;
     background-color: rgb(178, 213, 237);
-    color: #FFFFFF;
-    text-shadow: 1px 1px rgb(0, 0, 0);
-    box-shadow: 3px 3px 3px rgb(0, 0, 0);
+    color: var(--white-clr);
+    text-shadow: var(--text-shadow);
+    box-shadow: var(--box-shadow);
 }
 
 .new-book-button:hover {
@@ -130,7 +141,7 @@ body {
 
 .new-book-form input[type='text'] {
     width: 300px;
-    background-color: #FFFFFF;
+    background-color: var(--white-clr);
     border: 1px solid #D6D9DC;
     font-size: 14px;
     border-radius: 3px;
@@ -172,17 +183,17 @@ dialog {
 }
 
 ::backdrop {
-    background-color: rgba(0, 0, 0, 0.40);
+    background-color: var(--transparent-black-clr);
 }
 
 footer {
-    background-color: rgba(0, 0, 0, 0.40);
-    padding: 1rem;
+    background-color: var(--transparent-black-clr);
+    padding: var(--std-left-right-padding);
     text-align: center;
     font-size: 1.5rem;
     font-style: italic;
-    color: rgb(184, 67, 67);
-    text-shadow: 1px 1px rgb(0, 0, 0);
+    color: var(--custom-red-clr);
+    text-shadow: var(--text-shadow);
     font-weight: bold;
     letter-spacing: 0.2ch;
 }
