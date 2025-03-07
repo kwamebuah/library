@@ -5,9 +5,13 @@
 }
 
 body {
+    min-height: 100vh;
     background-image: url('jessica-ruscello-OQSCtabGkSY-unsplash.jpg');
     background-size: contain;
     font-family: 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .wrapper {
@@ -89,6 +93,7 @@ body {
     background-color: rgb(178, 213, 237);
     color: #FFFFFF;
     text-shadow: 1px 1px rgb(0, 0, 0);
+    box-shadow: 3px 3px 3px rgb(0, 0, 0);
 }
 
 .new-book-button:hover {
@@ -168,4 +173,20 @@ dialog {
 
 ::backdrop {
     background-color: rgba(0, 0, 0, 0.40);
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.40);
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: rgb(184, 67, 67);
+    text-shadow: 1px 1px rgb(0, 0, 0);
+    font-weight: bold;
+    letter-spacing: 0.2ch;
+}
+
+footer a {
+    color: inherit;
 }
