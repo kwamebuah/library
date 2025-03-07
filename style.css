@@ -18,7 +18,7 @@
 /* GENERAL FONT AND LAYOUT */
 body {
     min-height: 100vh;
-    background-image: url('jessica-ruscello-OQSCtabGkSY-unsplash.jpg');
+    background-image: url('img/jessica-ruscello-OQSCtabGkSY-unsplash.jpg');
     background-size: contain;
     font-family: 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
     display: flex;
