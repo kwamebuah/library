@@ -111,7 +111,7 @@ submitBtn.addEventListener('click', (event) => {
     modal.close();
 });
 
-const book1 = addBookToLibrary('The Hobbit', 'J.R.R Tolkien', 295, 'Yes');
+const book1 = addBookToLibrary('The Hobbit', 'J.R.R Tolkien', 295, 'No');
 displayBook();
 const book2 = addBookToLibrary('The Fellowship of the Rings', 'J.R.R Tolkien', 432, 'Yes');
 displayBook();
