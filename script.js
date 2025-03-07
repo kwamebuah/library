@@ -19,7 +19,7 @@ function addBookToLibrary(title, author, numOfPages, isRead) {
 function displayBook() {
     let toDisplay = myLibrary.at(-1);
     const idxNum = toDisplay.id;
-    const card = document.createElement('section');
+    const card = document.createElement('article');
     const readResponse = document.createElement('span');
     const readInput = document.createElement('input');
     const div1 = document.createElement('div');
@@ -34,9 +34,9 @@ function displayBook() {
     for (const key in toDisplay) {
         if (key === 'id') { }
         else if (key === 'title') {
-            const para = document.createElement('p');
-            para.textContent = `${toDisplay[key]}`;
-            card.appendChild(para);
+            const heading = document.createElement('h3');
+            heading.textContent = `${toDisplay[key]}`;
+            card.appendChild(heading);
         }
         else if (key === 'author') {
             const para = document.createElement('p');
