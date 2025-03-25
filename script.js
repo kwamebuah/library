@@ -4,13 +4,15 @@ const modal = document.querySelector('dialog');
 const submitBtn = document.querySelector('.new-book-form button');
 
 class Book {
+    #id; // we don't want to edit the id once it is set
     constructor(title, author, numOfPages, isRead) {
         this.title = title;
         this.author = author;
         this.pages = numOfPages;
         this.read = isRead;
-        this.id = myLibrary.length;
+        this.#id = myLibrary.length;
     }
+    get getId() { return this.#id; }
 }
 
 function addBookToLibrary(title, author, numOfPages, isRead) {
@@ -20,7 +22,7 @@ function addBookToLibrary(title, author, numOfPages, isRead) {
 
 function displayBook() {
     let toDisplay = myLibrary.at(-1);
-    const idxNum = toDisplay.id;
+    const idxNum = toDisplay.getId;
     const card = document.createElement('article');
     const readResponse = document.createElement('span');
     const readInput = document.createElement('input');
@@ -70,17 +72,17 @@ function displayBook() {
     }
 
     deleteBook.addEventListener('click', () => {
-        myLibrary.splice(myLibrary.findIndex(obj => obj.id === idxNum), 1);
+        myLibrary.splice(myLibrary.findIndex(obj => obj.getId === idxNum), 1);
         card.remove();
     });
 
     readInput.addEventListener('change', function () {
         if (this.checked) {
-            myLibrary[myLibrary.findIndex(obj => obj.id === idxNum)]['Read'] = 'Yes';
+            myLibrary[myLibrary.findIndex(obj => obj.getId === idxNum)]['Read'] = 'Yes';
             readResponse.textContent = 'Yes';
         }
         else {
-            myLibrary[myLibrary.findIndex(obj => obj.id === idxNum)]['Read'] = 'No';
+            myLibrary[myLibrary.findIndex(obj => obj.getId === idxNum)]['Read'] = 'No';
             readResponse.textContent = 'No';
         }
     });
