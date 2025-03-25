@@ -3,12 +3,14 @@ const newBookBtn = document.querySelector('.new-book-button');
 const modal = document.querySelector('dialog');
 const submitBtn = document.querySelector('.new-book-form button');
 
-function Book(title, author, numOfPages, isRead) {
-    this.title = title;
-    this.author = author;
-    this['Pages'] = numOfPages;
-    this['Read'] = isRead;
-    this.id = myLibrary.length;
+class Book {
+    constructor(title, author, numOfPages, isRead) {
+        this.title = title;
+        this.author = author;
+        this['Pages'] = numOfPages;
+        this['Read'] = isRead;
+        this.id = myLibrary.length;
+    }
 }
 
 function addBookToLibrary(title, author, numOfPages, isRead) {
