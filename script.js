@@ -7,8 +7,8 @@ class Book {
     constructor(title, author, numOfPages, isRead) {
         this.title = title;
         this.author = author;
-        this['Pages'] = numOfPages;
-        this['Read'] = isRead;
+        this.pages = numOfPages;
+        this.read = isRead;
         this.id = myLibrary.length;
     }
 }
@@ -45,10 +45,10 @@ function displayBook() {
             para.textContent = `by ${toDisplay[key]}`;
             card.appendChild(para);
         }
-        else if (key === 'Read') {
+        else if (key === 'read') {
             const para = document.createElement('p');
             para.appendChild(div1);
-            div1.textContent = `${key}: `;
+            div1.textContent = 'Read: ';
             div1.appendChild(readResponse);
             readResponse.textContent = `${toDisplay[key]}`;
             para.appendChild(div2);
@@ -64,7 +64,7 @@ function displayBook() {
         }
         else {
             const para = document.createElement('p');
-            para.textContent = `${key}: ${toDisplay[key]}`;
+            para.textContent = `Pages: ${toDisplay[key]}`;
             card.appendChild(para);
         }
     }
