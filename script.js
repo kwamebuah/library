@@ -103,6 +103,10 @@ submitBtn.addEventListener('click', (event) => {
     const numOfPages = document.querySelector('#pages');
     const hasRead = document.querySelector('#isRead');
 
+    if (!title.validity.valid || !author.validity.valid || !numOfPages.validity.valid) {
+        return;
+    }
+
     if (hasRead.checked) { hasRead.value = 'Yes'; }
     else { hasRead.value = 'No'; }
 
